@@ -19,6 +19,7 @@ public class ToDoService {
         public List<ToDo> getAllToDoItems(){
             ArrayList<ToDo> todoList = new ArrayList<>();
             repo.findAll().forEach(todo -> todoList.add(todo));
+            System.out.println(todoList);
         
             return todoList;
         }
