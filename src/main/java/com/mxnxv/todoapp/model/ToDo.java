@@ -3,6 +3,7 @@ package com.mxnxv.todoapp.model;
 import java.util.Date;
 
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import jakarta.persistence.Column;
@@ -10,11 +11,13 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
 @EnableAutoConfiguration
 @Entity
 @Table(name="todo")
+@SequenceGenerator(name = "todo_seq", sequenceName = "todo_seq", allocationSize = 1)
 public class ToDo {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
