@@ -21,7 +21,7 @@ FROM openjdk:17-slim AS final
 WORKDIR /app
 
 # Copy the built JAR file from the previous stage
-COPY --from=build /app/target/*.jar app.jar
+COPY --from=build /app/target/*.war app.war
 
 # Expose the port on which the application will run
 EXPOSE 8091
