@@ -35,6 +35,11 @@ jobs:
         artifacts: "target/*.war"
         token: ${{ secrets.GITHUB_TOKEN}}
         tag: v1.0.${{github.run_number}}
+    - name: Build and push
+      uses: docker/build-push-action@v5
+      with:
+        push: true
+        tags: mxnxverr/todoapp:v1.0.${{github.run_number}}
   
    
 
