@@ -27,4 +27,4 @@ COPY --from=build /app/target/*.war app.war
 EXPOSE 8091
 
 # Command to run the application when the container starts
-CMD ["java", "-jar", "app.jar"]
+CMD ["java", "-jar", "app.war"]

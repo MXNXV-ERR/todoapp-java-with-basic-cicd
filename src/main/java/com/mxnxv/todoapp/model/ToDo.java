@@ -3,7 +3,6 @@ package com.mxnxv.todoapp.model;
 import java.util.Date;
 
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.context.annotation.Primary;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import jakarta.persistence.Column;
