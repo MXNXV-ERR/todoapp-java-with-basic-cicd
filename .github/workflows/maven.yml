@@ -27,8 +27,10 @@ jobs:
         java-version: '17'
         distribution: 'oracle'
         cache: maven
+    - name: Set up Chrome Browser for TESTing
+      uses: browser-actions/setup-chrome@v1
     - name: Build with Maven
-      run: mvn -B package --file pom.xml
+      run: mvn package --file pom.xml
     - name: Rename files
       run: mv target/*.war target/todoapp-v1.0.${{github.run_number}}.war
     - name: Push to release
