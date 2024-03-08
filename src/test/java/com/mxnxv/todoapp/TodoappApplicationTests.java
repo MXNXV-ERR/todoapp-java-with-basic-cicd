@@ -2,7 +2,9 @@ package com.mxnxv.todoapp;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -41,5 +43,20 @@ public class TodoappApplicationTests {
 		// System.setProperty("webdriver.chrome.verboseLogging", "true");
 		chrome.manage().window().maximize();
 		chrome.get("http://127.0.0.1:8091/");
+		WebElement createNew = chrome.findElement(By.id("Add-TODO-Item-Buttom"));
+		createNew.click();
+		WebElement title = chrome.findElement(By.id("title"));
+		title.sendKeys("Test Todo");
+		WebElement date = chrome.findElement(By.id("date"));
+		date.sendKeys("01-01-2014");
+		WebElement status = chrome.findElement(By.id("status"));
+		status.sendKeys("Not Completed");
+		WebElement saveButton = chrome.findElement(By.id("SaveButton"));
+		saveButton.click();
+
+		
+		
+
+
 	}
 }
