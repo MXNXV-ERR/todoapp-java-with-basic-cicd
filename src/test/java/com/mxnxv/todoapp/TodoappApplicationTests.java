@@ -1,17 +1,14 @@
 package com.mxnxv.todoapp;
 
-import org.aspectj.lang.annotation.Before;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
@@ -28,6 +25,7 @@ public class TodoappApplicationTests {
 		public static void load(){
 				ChromeOptions opts = new ChromeOptions();
 				opts.addArguments("--headless");
+				opts.addArguments("window-size=1080,1920");
 				chrome =  new ChromeDriver(opts);
 		}
 	
