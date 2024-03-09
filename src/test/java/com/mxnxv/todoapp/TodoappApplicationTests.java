@@ -25,6 +25,7 @@ public class TodoappApplicationTests {
 		public static void load(){
 				ChromeOptions opts = new ChromeOptions();
 				opts.addArguments("--headless");
+				opts.addArguments("--no-sandbox");
 				opts.addArguments("window-size=1080,1920");
 				chrome =  new ChromeDriver(opts);
 		}
